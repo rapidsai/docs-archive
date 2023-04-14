@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>LocalCUDACluster &#8212; RAPIDS Deployment Documentation  documentation</title>
+    <title>dask-cuda &#8212; RAPIDS Deployment Documentation  documentation</title>
   
   
   
@@ -19,44 +19,46 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="https://docs.rapids.ai/assets/css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script defer="defer" src="https://docs.rapids.ai/assets/js/custom.js"></script>
-    <script defer="defer" src="../../_static/js/nav.js"></script>
-    <script defer="defer" src="../../_static/js/notebook-gallery.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script defer="defer" src="../_static/js/nav.js"></script>
+    <script defer="defer" src="../_static/js/notebook-gallery.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'guides/cuda/localcluster';</script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tools/dask-cuda';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dask Operator" href="kubernetes/dask-operator.html" />
+    <link rel="prev" title="Container Images" href="rapids-docker.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -84,7 +86,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -122,8 +124,8 @@
       
     
     
-    <img src="../../_static/RAPIDS-logo-purple.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/RAPIDS-logo-purple.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/RAPIDS-logo-purple.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/RAPIDS-logo-purple.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -145,49 +147,49 @@
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../local.html">
+                      <a class="nav-link nav-internal" href="../local.html">
                         Local
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../cloud/index.html">
+                      <a class="nav-link nav-internal" href="../cloud/index.html">
                         Cloud
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../hpc.html">
+                      <a class="nav-link nav-internal" href="../hpc.html">
                         HPC
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../platforms/index.html">
+                      <a class="nav-link nav-internal" href="../platforms/index.html">
                         Platforms
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../tools/index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
                         Tools
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
                         Workflow Examples
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../index.html">
+                      <a class="nav-link nav-internal" href="../guides/index.html">
                         Guides
                       </a>
                     </li>
@@ -267,7 +269,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -286,49 +288,49 @@ document.write(`
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../local.html">
+                      <a class="nav-link nav-internal" href="../local.html">
                         Local
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../cloud/index.html">
+                      <a class="nav-link nav-internal" href="../cloud/index.html">
                         Cloud
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../hpc.html">
+                      <a class="nav-link nav-internal" href="../hpc.html">
                         HPC
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../platforms/index.html">
+                      <a class="nav-link nav-internal" href="../platforms/index.html">
                         Platforms
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../tools/index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
                         Tools
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../examples/index.html">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
                         Workflow Examples
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../index.html">
+                      <a class="nav-link nav-internal" href="../guides/index.html">
                         Guides
                       </a>
                     </li>
@@ -373,6 +375,23 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rapids-docker.html">Container Images</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">dask-cuda</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="kubernetes/dask-operator.html">Dask Operator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kubernetes/dask-kubernetes.html">Dask Kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kubernetes/dask-helm-chart.html">Dask Helm Chart</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -401,11 +420,14 @@ document.write(`
   <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../../index.html" class="nav-link" aria-label="Home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">LocalCUDACluster</li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tools</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">dask-cuda</li>
   </ul>
 </nav>
 </div>
@@ -422,20 +444,28 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="localcudacluster">
-<h1>LocalCUDACluster<a class="headerlink" href="#localcudacluster" title="Permalink to this heading">#</a></h1>
-<p>Create a cluster of one or more GPUs on your local machine. You can launch a Dask scheduler on LocalCUDACluster to parallelize and distribute your RAPIDS workflows across multiple GPUs on a single node.</p>
+  <section id="dask-cuda">
+<h1>dask-cuda<a class="headerlink" href="#dask-cuda" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://docs.rapids.ai/api/dask-cuda/stable/">Dask-CUDA</a> is a library extending Dask.distributed’s single-machine LocalCluster and Worker for use in distributed GPU workloads.</p>
+<section id="localcudacluster">
+<h2>LocalCUDACluster<a class="headerlink" href="#localcudacluster" title="Permalink to this heading">#</a></h2>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">LocalCUDACluster</span></code> to create a cluster of one or more GPUs on your local machine. You can launch a Dask scheduler on LocalCUDACluster to parallelize and distribute your RAPIDS workflows across multiple GPUs on a single node.</p>
 <p>In addition to enabling multi-GPU computation, <code class="docutils literal notranslate"><span class="pre">LocalCUDACluster</span></code> also provides a simple interface for managing the cluster, such as starting and stopping the cluster, querying the status of the nodes, and monitoring the workload distribution.</p>
+</section>
 <section id="pre-requisites">
 <h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">#</a></h2>
-<p>Before running these instructions, ensure you have installed the <a class="reference external" href="https://docs.dask.org/en/stable/install.html"><code class="docutils literal notranslate"><span class="pre">dask</span></code></a> and <a class="reference external" href="https://docs.rapids.ai/api/dask-cuda/nightly/install.html"><code class="docutils literal notranslate"><span class="pre">dask_cuda</span></code></a> packages in your local environment</p>
+<p>Before running these instructions, ensure you have installed the <a class="reference external" href="https://docs.dask.org/en/stable/install.html"><code class="docutils literal notranslate"><span class="pre">dask</span></code></a> and <a class="reference external" href="https://docs.rapids.ai/api/dask-cuda/nightly/install.html"><code class="docutils literal notranslate"><span class="pre">dask-cuda</span></code></a> packages in your local environment</p>
 </section>
 <section id="cluster-setup">
 <h2>Cluster setup<a class="headerlink" href="#cluster-setup" title="Permalink to this heading">#</a></h2>
 <section id="instantiate-a-localcudacluster-object">
 <h3>Instantiate a LocalCUDACluster object<a class="headerlink" href="#instantiate-a-localcudacluster-object" title="Permalink to this heading">#</a></h3>
-<p>In this example, we create a cluster with two workers, each of which is responsible for executing tasks on a separate GPU.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cluster = LocalCUDACluster(n_workers=2)</span>
+<p>The <code class="docutils literal notranslate"><span class="pre">LocalCUDACluster</span></code> class autodetects the GPUs in your system, so if you create it on a machine with two GPUs it will create a cluster with two workers, each of which is responsible for executing tasks on a separate GPU.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cluster = LocalCUDACluster()</span>
+</pre></div>
+</div>
+<p>You can also restrict your cluster to use specific GPUs by setting the <code class="docutils literal notranslate"><span class="pre">CUDA_VISIBLE_DEVICES</span></code> environment variable, or as a keyword argument.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cluster = LocalCUDACluster(CUDA_VISIBLE_DEVICES=&quot;0,1&quot;)  # Creates one worker for GPUs 0 and 1</span>
 </pre></div>
 </div>
 </section>
@@ -467,14 +497,6 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="clean-up">
-<h2>3.Clean up<a class="headerlink" href="#clean-up" title="Permalink to this heading">#</a></h2>
-<p>Be sure to shut down and clean LocalCUDACluster when you are done:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">client.close()</span>
-<span class="go">cluster.close()</span>
-</pre></div>
-</div>
-</section>
 </section>
 
 
@@ -488,6 +510,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="rapids-docker.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Container Images</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="kubernetes/dask-operator.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dask Operator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -506,6 +546,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#localcudacluster">LocalCUDACluster</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-requisites">Pre-requisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cluster-setup">Cluster setup</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instantiate-a-localcudacluster-object">Instantiate a LocalCUDACluster object</a></li>
@@ -513,7 +554,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-rapids">Test RAPIDS</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-up">3.Clean up</a></li>
 </ul>
   </nav></div>
 
@@ -530,8 +570,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Container Images &#8212; RAPIDS Deployment Documentation  documentation</title>
+    <title>RAPIDS on Google Colab &#8212; RAPIDS Deployment Documentation  documentation</title>
   
   
   
@@ -54,11 +54,11 @@
     <script src="../_static/design-tabs.js"></script>
     <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tools/rapids-docker';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'platforms/colab';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="dask-cuda" href="dask-cuda.html" />
-    <link rel="prev" title="Tools" href="index.html" />
+    <link rel="next" title="Tools" href="../tools/index.html" />
+    <link rel="prev" title="RAPIDS on Databricks" href="databricks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,15 +167,15 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../platforms/index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
                         Platforms
                       </a>
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tools/index.html">
                         Tools
                       </a>
                     </li>
@@ -258,6 +258,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -304,15 +308,15 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../platforms/index.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
                         Platforms
                       </a>
                     </li>
                 
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../tools/index.html">
                         Tools
                       </a>
                     </li>
@@ -376,13 +380,12 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Container Images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dask-cuda.html">dask-cuda</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="kubernetes/dask-operator.html">Dask Operator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kubernetes/dask-kubernetes.html">Dask Kubernetes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kubernetes/dask-helm-chart.html">Dask Helm Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kubernetes.html">Kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kubeflow.html">Kubeflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kserve.html">KServe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coiled.html">Coiled</a></li>
+<li class="toctree-l1"><a class="reference internal" href="databricks.html">RAPIDS on Databricks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">RAPIDS on Google Colab</a></li>
 </ul>
 </div>
 </nav></div>
@@ -421,9 +424,9 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tools</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Platforms</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Container Images</li>
+    <li class="breadcrumb-item active" aria-current="page">RAPIDS on Google Colab</li>
   </ul>
 </nav>
 </div>
@@ -440,9 +443,61 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="container-images">
-<h1>Container Images<a class="headerlink" href="#container-images" title="Permalink to this heading">#</a></h1>
-<p>Installation instructions for Docker are hosted at the <a class="reference external" href="https://docs.rapids.ai/install#docker">RAPIDS Container Installation Docs Page</a>.</p>
+  <section id="rapids-on-google-colab">
+<h1>RAPIDS on Google Colab<a class="headerlink" href="#rapids-on-google-colab" title="Permalink to this heading">#</a></h1>
+<section id="launch-notebook">
+<h2>Launch notebook<a class="headerlink" href="#launch-notebook" title="Permalink to this heading">#</a></h2>
+<p>To get started in <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>, click <code class="docutils literal notranslate"><span class="pre">File</span></code> at the top toolbar to Create new or Upload existing notebook</p>
+</section>
+<section id="set-the-runtime">
+<h2>Set the Runtime<a class="headerlink" href="#set-the-runtime" title="Permalink to this heading">#</a></h2>
+<p>Click the <code class="docutils literal notranslate"><span class="pre">Runtime</span></code> dropdown and select <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">Runtime</span> <span class="pre">Type</span></code></p>
+<p><img alt="Screenshot of create runtime and runtime type" src="../_images/googlecolab-select-runtime-type.png" /></p>
+<p>Choose GPU for Hardware Accelerator</p>
+<p><img alt="Screenshot of gpu for hardware accelerator" src="../_images/googlecolab-select-gpu-hardware-accelerator.png" /></p>
+</section>
+<section id="check-gpu-type">
+<h2>Check GPU type<a class="headerlink" href="#check-gpu-type" title="Permalink to this heading">#</a></h2>
+<p>Check the output of <code class="docutils literal notranslate"><span class="pre">!nvidia-smi</span></code> to make sure you’ve been allocated a Rapids Compatible GPU, i.e [Tesla T4, P4, or P100].</p>
+<p><img alt="Screenshot of nvidia-smi" src="../_images/googlecolab-output-nvidia-smi.png" /></p>
+</section>
+<section id="run-rapids-install-script">
+<h2>Run RAPIDS install script<a class="headerlink" href="#run-rapids-install-script" title="Permalink to this heading">#</a></h2>
+<p>Checks GPU compatibility with RAPIDS, then installs the latest <strong>stable</strong> versions of RAPIDSAI’s core libraries (cuDF, cuML, cuGraph, and xgboost) using <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span># Colab warns and provides remediation steps if it&#39;s not compatible with RAPIDS.
+
+!git clone https://github.com/rapidsai/rapidsai-csp-utils.git
+!python rapidsai-csp-utils/colab/pip-install.py
+</pre></div>
+</div>
+<br>
+<p>If you need to install any RAPIDS Extended libraries or the nightly version, you can use the <a class="reference external" href="https://colab.research.google.com/drive/1TAAi_szMfWqRfHVfjGSqnGVLr_ztzUM9">RAPIDS Conda Colab Template</a> notebook and install via <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>The<span class="w"> </span>&lt;release&gt;<span class="w"> </span>options<span class="w"> </span>are<span class="w"> </span><span class="s1">&#39;stable&#39;</span><span class="w"> </span>and<span class="w"> </span><span class="s1">&#39;nightly&#39;</span>.<span class="w"> </span>Leaving<span class="w"> </span>it<span class="w"> </span>blank<span class="w"> </span>or<span class="w"> </span>adding<span class="w"> </span>any<span class="w"> </span>other<span class="w"> </span>words<span class="w"> </span>will<span class="w"> </span>default<span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;stable&#39;</span>.
+
+<span class="go">!python rapidsai-csp-utils/colab/env-check.py</span>
+<span class="go">!bash rapidsai-csp-utils/colab/update_gcc.sh</span>
+<span class="go">!python rapidsai-csp-utils/colab/install_rapids.py &lt;release&gt; &lt;packages&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="test-rapids">
+<h2>Test Rapids<a class="headerlink" href="#test-rapids" title="Permalink to this heading">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">import cudf</span>
+
+<span class="go">gdf = cudf.DataFrame({&quot;a&quot;:[1,2,3],&quot;b&quot;:[4,5,6]})</span>
+<span class="go">gdf</span>
+<span class="go">    a   b</span>
+<span class="go">0   1   4</span>
+<span class="go">1   2   5</span>
+<span class="go">2   3   6</span>
+</pre></div>
+</div>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
+<p>Check out this <a class="reference external" href="https://towardsdatascience.com/">guide</a> for an overview of how to access and work with your own datasets in Colab.</p>
+<p>For more RAPIDS examples, check out our RAPIDS <a class="reference external" href="https://github.com/rapidsai/notebooks">notebooks</a> and <a class="reference external" href="https://github.com/rapidsai/notebooks-contrib">notebooks-contrib</a> repos</p>
+</section>
 </section>
 
 
@@ -457,20 +512,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="databricks.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tools</p>
+        <p class="prev-next-title">RAPIDS on Databricks</p>
       </div>
     </a>
     <a class="right-next"
-       href="dask-cuda.html"
+       href="../tools/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">dask-cuda</p>
+        <p class="prev-next-title">Tools</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -483,6 +538,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-notebook">Launch notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-runtime">Set the Runtime</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-gpu-type">Check GPU type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-rapids-install-script">Run RAPIDS install script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-rapids">Test Rapids</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
